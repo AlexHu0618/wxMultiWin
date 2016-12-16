@@ -1927,13 +1927,13 @@
 1385316876 source:e:\github\gitproject\wxmultiwin\resource.rc
 	"wx/msw/wx.rc"
 
-1481685138 source:e:\github\gitproject\wxmultiwin\logindialog.cpp
+1481888717 source:e:\github\gitproject\wxmultiwin\logindialog.cpp
 	"LoginDialog.h"
 	<wx/msgdlg.h>
 	<wx/intl.h>
 	<wx/string.h>
 
-1481685121 e:\github\gitproject\wxmultiwin\logindialog.h
+1481878360 e:\github\gitproject\wxmultiwin\logindialog.h
 	<wx/sizer.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
@@ -2068,23 +2068,130 @@
 
 1412609644 d:\wxwidgets-3.0.2\include\wx\os2\textctrl.h
 
-1481527866 e:\github\gitproject\wxmultiwin\wxmultiwinmain.h
+1481876157 e:\github\gitproject\wxmultiwin\wxmultiwinmain.h
+	<wx/sizer.h>
 	<wx/menu.h>
+	<wx/textctrl.h>
+	<wx/toolbar.h>
+	<wx/slider.h>
+	<wx/bmpbuttn.h>
+	<wx/button.h>
 	<wx/frame.h>
 	<wx/statusbr.h>
+	"LoginDialog.h"
 
-1481594292 source:e:\github\gitproject\wxmultiwin\wxmultiwinmain.cpp
+1481878201 source:e:\github\gitproject\wxmultiwin\wxmultiwinmain.cpp
 	"wxMultiWinMain.h"
 	<wx/msgdlg.h>
+	<wx/bitmap.h>
 	<wx/intl.h>
+	<wx/image.h>
 	<wx/string.h>
 
-1481634143 source:e:\github\gitproject\wxmultiwin\wxmultiwinapp.cpp
+1481874156 source:e:\github\gitproject\wxmultiwin\wxmultiwinapp.cpp
 	"wxMultiWinApp.h"
 	"wxMultiWinMain.h"
 	<wx/image.h>
-	"LoginDialog.h"
 
 1481634085 e:\github\gitproject\wxmultiwin\wxmultiwinapp.h
 	<wx/app.h>
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\bmpbuttn.h
+	"wx/defs.h"
+	"wx/button.h"
+	"wx/univ/bmpbuttn.h"
+	"wx/msw/bmpbuttn.h"
+	"wx/motif/bmpbuttn.h"
+	"wx/gtk/bmpbuttn.h"
+	"wx/gtk1/bmpbuttn.h"
+	"wx/osx/bmpbuttn.h"
+	"wx/cocoa/bmpbuttn.h"
+	"wx/os2/bmpbuttn.h"
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\univ\bmpbuttn.h
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\msw\bmpbuttn.h
+	"wx/button.h"
+	"wx/bitmap.h"
+	"wx/brush.h"
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\motif\bmpbuttn.h
+	"wx/motif/bmpmotif.h"
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\motif\bmpmotif.h
+	"wx/defs.h"
+	"wx/bitmap.h"
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\gtk\bmpbuttn.h
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\gtk1\bmpbuttn.h
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\osx\bmpbuttn.h
+	"wx/button.h"
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\cocoa\bmpbuttn.h
+	"wx/cocoa/NSButton.h"
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\os2\bmpbuttn.h
+	"wx/button.h"
+	"wx/dcclient.h"
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\dcclient.h
+	"wx/dc.h"
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\slider.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/univ/slider.h"
+	"wx/msw/slider.h"
+	"wx/motif/slider.h"
+	"wx/gtk/slider.h"
+	"wx/gtk1/slider.h"
+	"wx/osx/slider.h"
+	"wx/cocoa/slider.h"
+	"wx/os2/slider.h"
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\univ\slider.h
+	"wx/univ/scrthumb.h"
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\univ\scrthumb.h
+	"wx/timer.h"
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\msw\slider.h
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\motif\slider.h
+	"wx/control.h"
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\gtk\slider.h
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\gtk1\slider.h
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\osx\slider.h
+	"wx/control.h"
+	"wx/slider.h"
+	"wx/stattext.h"
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\cocoa\slider.h
+	"wx/cocoa/NSSlider.h"
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\cocoa\nsslider.h
+	"wx/hashmap.h"
+	"wx/cocoa/ObjcAssociate.h"
+	"wx/cocoa/ObjcRef.h"
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\os2\slider.h
+	"wx/control.h"
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\textdlg.h
+	"wx/generic/textdlgg.h"
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\generic\textdlgg.h
+	"wx/defs.h"
+	"wx/dialog.h"
+	"wx/valtext.h"
+	"wx/textctrl.h"
+
+1412609644 d:\wxwidgets-3.0.2\include\wx\valtext.h
+	"wx/defs.h"
+	"wx/validate.h"
 

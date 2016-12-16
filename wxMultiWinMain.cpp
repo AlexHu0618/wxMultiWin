@@ -11,7 +11,9 @@
 #include <wx/msgdlg.h>
 
 //(*InternalHeaders(wxMultiWinFrame)
+#include <wx/bitmap.h>
 #include <wx/intl.h>
+#include <wx/image.h>
 #include <wx/string.h>
 //*)
 
@@ -42,9 +44,15 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 }
 
 //(*IdInit(wxMultiWinFrame)
-const long wxMultiWinFrame::idMenuQuit = wxNewId();
+const long wxMultiWinFrame::ID_BUTTON1 = wxNewId();
+const long wxMultiWinFrame::ID_SLIDER1 = wxNewId();
+const long wxMultiWinFrame::ID_TEXTCTRL1 = wxNewId();
+const long wxMultiWinFrame::ID_MENUITEM1 = wxNewId();
 const long wxMultiWinFrame::idMenuAbout = wxNewId();
 const long wxMultiWinFrame::ID_STATUSBAR1 = wxNewId();
+const long wxMultiWinFrame::ID_BITMAPBUTTON1 = wxNewId();
+const long wxMultiWinFrame::ID_BITMAPBUTTON2 = wxNewId();
+const long wxMultiWinFrame::ID_TOOLBAR1 = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(wxMultiWinFrame,wxFrame)
@@ -58,13 +66,22 @@ wxMultiWinFrame::wxMultiWinFrame(wxWindow* parent,wxWindowID id)
     wxMenuItem* MenuItem2;
     wxMenuItem* MenuItem1;
     wxMenu* Menu1;
+    wxBoxSizer* BoxSizer1;
     wxMenuBar* MenuBar1;
     wxMenu* Menu2;
 
-    Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
+    Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE | wxMAXIMIZE, _T("wxID_ANY"));
+    BoxSizer1 = new wxBoxSizer(wxHORIZONTAL);
+    Button1 = new wxButton(this, ID_BUTTON1, _("Label"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
+    BoxSizer1->Add(Button1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    Slider1 = new wxSlider(this, ID_SLIDER1, 0, 0, 100, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_SLIDER1"));
+    BoxSizer1->Add(Slider1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    TextCtrl1 = new wxTextCtrl(this, ID_TEXTCTRL1, _("Text"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
+    BoxSizer1->Add(TextCtrl1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    SetSizer(BoxSizer1);
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
-    MenuItem1 = new wxMenuItem(Menu1, idMenuQuit, _("Quit\tAlt-F4"), _("Quit the application"), wxITEM_NORMAL);
+    MenuItem1 = new wxMenuItem(Menu1, ID_MENUITEM1, _("Quit\tAlt-F4"), _("Quit the application"), wxITEM_NORMAL);
     Menu1->Append(MenuItem1);
     MenuBar1->Append(Menu1, _("&File"));
     Menu2 = new wxMenu();
@@ -78,8 +95,27 @@ wxMultiWinFrame::wxMultiWinFrame(wxWindow* parent,wxWindowID id)
     StatusBar1->SetFieldsCount(1,__wxStatusBarWidths_1);
     StatusBar1->SetStatusStyles(1,__wxStatusBarStyles_1);
     SetStatusBar(StatusBar1);
+    ToolBar1 = new wxToolBar(this, ID_TOOLBAR1, wxDefaultPosition, wxDefaultSize, wxTB_HORIZONTAL|wxNO_BORDER, _T("ID_TOOLBAR1"));
+    ToolBar1->SetToolBitmapSize(wxSize(-1,48));
+    BtnUser = new wxBitmapButton(ToolBar1, ID_BITMAPBUTTON1, wxBitmap(wxImage(_T(".\\resources\\icons\\user.png"))), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW, wxDefaultValidator, _T("ID_BITMAPBUTTON1"));
+    ToolBar1->AddControl(BtnUser);
+    BtnSetting = new wxBitmapButton(ToolBar1, ID_BITMAPBUTTON2, wxBitmap(wxImage(_T(".\\resources\\icons\\setting.png"))), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW, wxDefaultValidator, _T("ID_BITMAPBUTTON2"));
+    //ToolBar1->AddControl(BtnSetting);
+    /***** add BtnSetting to the ToolBar1 if the user is administrator  *******/
+    LoginDia = new LoginDialog(this);
+    LoginDia->ShowModal();
+    if(LoginDia->IsA)
+    {
+        ToolBar1->AddControl(BtnSetting);
+    }
+    /*************************************************************************/
+    ToolBar1->Realize();
+    SetToolBar(ToolBar1);
+    BoxSizer1->Fit(this);
+    BoxSizer1->SetSizeHints(this);
+    Center();
 
-    Connect(idMenuQuit,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMultiWinFrame::OnQuit);
+    Connect(ID_MENUITEM1,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMultiWinFrame::OnQuit);
     Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMultiWinFrame::OnAbout);
     //*)
 }
@@ -99,4 +135,9 @@ void wxMultiWinFrame::OnAbout(wxCommandEvent& event)
 {
     wxString msg = wxbuildinfo(long_f);
     wxMessageBox(msg, _("Welcome to..."));
+}
+
+void wxMultiWinFrame::AddSettingBtn()
+{
+
 }

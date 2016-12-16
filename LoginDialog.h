@@ -24,6 +24,8 @@ class LoginDialog: public wxDialog
 		wxButton* BtnLogin;
 		wxTextCtrl* TextUser;
 		//*)
+		bool IsAdmin();
+		bool IsA;
 
 	protected:
 
@@ -42,8 +44,7 @@ class LoginDialog: public wxDialog
 		void OnBtnLoginClick(wxCommandEvent& event);
 		void OnBtnCancalClick(wxCommandEvent& event);
 		//*)
-		wxWindow* parentFrame;
-		bool IsAccessed();
+		wxWindowBase* parentFrame;
 
 		DECLARE_EVENT_TABLE()
 };

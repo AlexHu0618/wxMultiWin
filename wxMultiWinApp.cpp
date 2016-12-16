@@ -13,7 +13,6 @@
 #include "wxMultiWinMain.h"
 #include <wx/image.h>
 //*)
-#include "LoginDialog.h"
 
 IMPLEMENT_APP(wxMultiWinApp);
 
@@ -25,10 +24,8 @@ bool wxMultiWinApp::OnInit()
     if ( wxsOK )
     {
         wxMultiWinFrame* Frame = new wxMultiWinFrame(0);
-        LoginDialog* Dialog = new LoginDialog(Frame);
-        Frame->Show(false);
+        Frame->Show();
         SetTopWindow(Frame);
-        Dialog->ShowModal();
     }
     //*)
     return wxsOK;

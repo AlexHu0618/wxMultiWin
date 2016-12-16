@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxDialog" name="LoginDialog">
+		<title>Login</title>
+		<centered>1</centered>
+		<tooltip>your name</tooltip>
+		<help>my name</help>
 		<object class="wxBoxSizer" variable="BoxSizer1" member="no">
 			<orient>wxVERTICAL</orient>
 			<object class="sizeritem">
@@ -15,7 +19,10 @@
 						<option>1</option>
 					</object>
 					<object class="sizeritem">
-						<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextUser" member="yes" />
+						<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextUser" member="yes">
+							<size>130,22</size>
+							<tooltip>please input your name</tooltip>
+						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
 						<option>1</option>
@@ -29,7 +36,10 @@
 						<option>1</option>
 					</object>
 					<object class="sizeritem">
-						<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextPW" member="yes" />
+						<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextPW" member="yes">
+							<size>130,22</size>
+							<tooltip>please input the password</tooltip>
+						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
 						<option>1</option>
@@ -44,6 +54,7 @@
 					<object class="sizeritem">
 						<object class="wxButton" name="ID_BUTTON1" variable="BtnLogin" member="yes">
 							<label>Login</label>
+							<size>80,36</size>
 							<handler function="OnBtnLoginClick" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
@@ -53,6 +64,7 @@
 					<object class="sizeritem">
 						<object class="wxButton" name="ID_BUTTON2" variable="BtnCancal" member="yes">
 							<label>Cancal</label>
+							<size>80,36</size>
 							<handler function="OnBtnCancalClick" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
