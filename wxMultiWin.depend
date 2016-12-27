@@ -2068,19 +2068,20 @@
 
 1412609644 d:\wxwidgets-3.0.2\include\wx\os2\textctrl.h
 
-1481876157 e:\github\gitproject\wxmultiwin\wxmultiwinmain.h
+1482673745 e:\github\gitproject\wxmultiwin\wxmultiwinmain.h
 	<wx/sizer.h>
+	<wx/stattext.h>
 	<wx/menu.h>
 	<wx/textctrl.h>
 	<wx/toolbar.h>
-	<wx/slider.h>
+	<wx/grid.h>
 	<wx/bmpbuttn.h>
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/statusbr.h>
 	"LoginDialog.h"
 
-1481878201 source:e:\github\gitproject\wxmultiwin\wxmultiwinmain.cpp
+1482666979 source:e:\github\gitproject\wxmultiwin\wxmultiwinmain.cpp
 	"wxMultiWinMain.h"
 	<wx/msgdlg.h>
 	<wx/bitmap.h>
@@ -2194,4 +2195,22 @@
 1412609644 d:\wxwidgets-3.0.2\include\wx\valtext.h
 	"wx/defs.h"
 	"wx/validate.h"
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\grid.h
+	"wx/generic/grid.h"
+	"wx/generic/grideditors.h"
+	"wx/generic/gridctrl.h"
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\generic\grid.h
+	"wx/defs.h"
+	"wx/hashmap.h"
+	"wx/scrolwin.h"
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\generic\grideditors.h
+	"wx/defs.h"
+	"wx/scopedptr.h"
+
+1412609642 d:\wxwidgets-3.0.2\include\wx\generic\gridctrl.h
+	"wx/grid.h"
+	"wx/datetime.h"
 
